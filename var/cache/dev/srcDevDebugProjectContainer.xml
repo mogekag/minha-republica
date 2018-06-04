@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/Users/renatoguimaraes/Sites/skeleton/src</parameter>
-    <parameter key="kernel.project_dir">/Users/renatoguimaraes/Sites/skeleton</parameter>
+    <parameter key="kernel.root_dir">/Users/renatoguimaraes/Sites/minha-republica/src</parameter>
+    <parameter key="kernel.project_dir">/Users/renatoguimaraes/Sites/minha-republica</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">src</parameter>
-    <parameter key="kernel.cache_dir">/Users/renatoguimaraes/Sites/skeleton/var/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/Users/renatoguimaraes/Sites/skeleton/var/log</parameter>
+    <parameter key="kernel.cache_dir">/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev</parameter>
+    <parameter key="kernel.logs_dir">/Users/renatoguimaraes/Sites/minha-republica/var/log</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
     </parameter>
     <parameter key="kernel.bundles_metadata" type="collection">
       <parameter key="FrameworkBundle" type="collection">
-        <parameter key="path">/Users/renatoguimaraes/Sites/skeleton/vendor/symfony/framework-bundle</parameter>
+        <parameter key="path">/Users/renatoguimaraes/Sites/minha-republica/vendor/symfony/framework-bundle</parameter>
         <parameter key="namespace">Symfony\Bundle\FrameworkBundle</parameter>
       </parameter>
     </parameter>
@@ -35,11 +35,11 @@
       <parameter key="cookie_httponly">true</parameter>
       <parameter key="gc_probability">1</parameter>
     </parameter>
-    <parameter key="session.save_path">/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/sessions</parameter>
+    <parameter key="session.save_path">/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/sessions</parameter>
     <parameter key="session.metadata.update_threshold">0</parameter>
     <parameter key="data_collector.templates" type="collection"/>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/srcDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/srcDevDebugProjectContainer.xml</parameter>
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
@@ -228,14 +228,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -278,9 +270,9 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem" public="true"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator" public="false">
       <argument type="service" id="kernel"/>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/src/Resources</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/src/Resources</argument>
       <argument type="collection">
-        <argument>/Users/renatoguimaraes/Sites/skeleton/src</argument>
+        <argument>/Users/renatoguimaraes/Sites/minha-republica/src</argument>
       </argument>
     </service>
     <service id="uri_signer" class="Symfony\Component\HttpKernel\UriSigner" public="false">
@@ -416,9 +408,9 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter" public="true">
       <tag name="cache.pool"/>
-      <argument>wjSOl6STIl</argument>
+      <argument>ttEk6rK4rM</argument>
       <argument>0</argument>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/pools</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
       </call>
@@ -428,37 +420,37 @@
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="true">
       <tag name="cache.pool"/>
-      <argument>fUfPUbTMhz</argument>
+      <argument>YdU+r36N2i</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/pools</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.validator" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool"/>
-      <argument>xCORCnOAd3</argument>
+      <argument>9+ifCwds0R</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/pools</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.serializer" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool"/>
-      <argument>ZXC3EKc3PN</argument>
+      <argument>gH+ubaO9ZS</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/pools</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
     <service id="cache.annotations" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
       <tag name="cache.pool"/>
-      <argument>eZStK2E8QM</argument>
+      <argument>xVk5lXhUue</argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/pools</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -468,7 +460,7 @@
       <argument></argument>
       <argument>0</argument>
       <argument>%container.build_id%</argument>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/pools</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/pools</argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -497,7 +489,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/pools</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="logger" on-invalid="ignore"/>
       </call>
@@ -562,15 +554,15 @@
         <argument key="cache.annotations" type="service" id="cache.annotations" on-invalid="ignore_uninitialized"/>
       </argument>
     </service>
-    <service id=".2_ServiceLocator~GyBM3Rk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".2_ServiceLocator~zsradQ9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="initialized_session" type="service" id="session" on-invalid="ignore_uninitialized"/>
         <argument key="session" type="service" id="session" on-invalid="ignore"/>
       </argument>
     </service>
-    <service id=".1_NativeFileSessionHandler~GyBM3Rk" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/sessions</argument>
+    <service id=".1_NativeFileSessionHandler~zsradQ9" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/sessions</argument>
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.native"/>
@@ -593,18 +585,18 @@
     <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
     <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
-      <argument>/Users/renatoguimaraes/Sites/skeleton/var/cache/dev/sessions</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
     <service id="session.handler.native_file" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\StrictSessionHandler" public="false">
-      <argument type="service" id=".1_NativeFileSessionHandler~GyBM3Rk"/>
+      <argument type="service" id=".1_NativeFileSessionHandler~zsradQ9"/>
     </service>
     <service id="session_listener" class="Symfony\Component\HttpKernel\EventListener\SessionListener" public="false">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
-      <argument type="service" id=".2_ServiceLocator~GyBM3Rk"/>
+      <argument type="service" id=".2_ServiceLocator~zsradQ9"/>
     </service>
     <service id="session.save_listener" class="Symfony\Component\HttpKernel\EventListener\SaveSessionListener" public="false">
       <deprecated>The "%service_id%" service is deprecated since Symfony 4.1. Use the "session_listener" service instead.</deprecated>
@@ -693,7 +685,7 @@
       <argument type="service" id=".service_locator.oNnsU_h.router.default"/>
       <argument>kernel::loadRoutes</argument>
       <argument type="collection">
-        <argument key="cache_dir">/Users/renatoguimaraes/Sites/skeleton/var/cache/dev</argument>
+        <argument key="cache_dir">/Users/renatoguimaraes/Sites/minha-republica/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -736,7 +728,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="logger" on-invalid="ignore"/>
-      <argument>/Users/renatoguimaraes/Sites/skeleton</argument>
+      <argument>/Users/renatoguimaraes/Sites/minha-republica</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -852,6 +844,6 @@
     <service id="Symfony\Component\Routing\RequestContext" alias="router.request_context" public="false"/>
     <service id="argument_resolver.controller_locator" alias=".service_locator.9_yeNH1"/>
     <service id="Psr\Log\LoggerInterface" alias="logger" public="false"/>
-    <service id=".service_locator.AoifO_3" alias=".2_ServiceLocator~GyBM3Rk" public="false"/>
+    <service id=".service_locator.AoifO_3" alias=".2_ServiceLocator~zsradQ9" public="false"/>
   </services>
 </container>
